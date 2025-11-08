@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  font-size: 16px; /* Базовый размер (1rem = 16px) */
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px; /* Базовый размер на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 10px; /* Для маленьких экранов */
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  color: rgb(255, 245, 224);
+  font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 245, 224);
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    background: linear-gradient(0deg,rgb(0, 0, 0) 100%, rgb(18, 0, 59) 0%);
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px 15px;
+}
+
+/*Шапка*/
+
+header {
+    padding: 50px 0;
+}
+
+header .logo {
+    width: 30%;
+    max-width: 252px;
+    height: auto;
+    padding: 0px 20px;
+}
+
+header nav {
+    float: right;
+    width: 50%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li.active::after {
+    content: '';
+    display: block;
+    width: 85px;
+    height: 5px;
+    background-color: #b88519;
+    border-radius: 10px;
+    position: relative;
+    top: 10px;
+    left: -10px;
+}
+
+header nav ul li a {
+    color: rgb(255, 242, 203);
+}
+
+header nav ul li:not(.active):not(.btn) a:hover {
+    border-bottom: 5px solid #ddad46;
+}
+
+header nav ul li.btn a {
+    background-color: #e2b146;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 250ms ease;
+}
+
+header nav ul li.btn a:hover {
+    background-color: #ffe1a8;
+    border-radius: 7px;
+}
+
+@media (max-width: 768px) {
+    header .logo {
+        width: 40%;
+        max-width: 325px;
+        height: auto;
+    }
+}
+
+/*Презентация*/
+
+.hero {
+    padding-bottom: 100px;
+}
+
+.hero--info {
+    width: 35%;
+    padding-top: 70px;
+}
+
+.hero--info h2 {
+    color: #ddad46;
+    font-size: 1.8rem;
+    font-weight: 500;
+    position: relative;
+    left: 20px;
+}
+
+.hero--info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.hero--info p {
+    font-weight: 400;
+    line-height: 170%;
+    margin: 30px;
+}
+
+.hero--info .btn {
+    background: #ddad46;
+    color: #27004b;
+    border-radius: 7px;
+    padding: 10px 20px;
+    border: 0;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 250ms ease;
+}
+
+.hero--info .btn:hover {
+    background: #ddad46;
+    border-radius: 10px;
+    transform: scale(1.1);
+}
+
+.hero img {
+    float: right;
+    margin-top: -300px;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+}
+
+.hero .trailer {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero .how {
+    display: inline-block;
+    width: fit-content;
+    margin: 20px auto 0;
+    color: rgb(0, 0, 0);
+    background-color: #ffb62e;
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-weight: 500;
+    transition: all 250ms ease;
+    text-align: center;
+    font-size: large;
+}
+
+.hero .how:hover {
+    color: rgb(0, 0, 0);
+    background-color: #ffe1a8;
+    border-radius: 7px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+  
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero img {
+        float: right;
+        margin-top: -300px;
+        width: 50%;
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+  
+    .hero h2 {
+        font-size: 1rem;
+    }
+
+    .hero img {
+        float: right;
+        margin-top: -300px;
+        width: 25%;
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+/*Популярное*/
+
+.tranding {
+    padding-top: 0;
+}
+
+.tranding h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.tranding .projects {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0;
+    gap: 60px;
+}
+
+.tranding .projects .blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 50px 0;
+    justify-content: center;
+}
+
+.tranding .projects span {
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+.tranding .projects .block img,
+.tranding .projects .block .img {
+    width: 5rem;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .tranding .projects {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/*Работаем над*/
+
+.work h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 50px;
+}
+
+.work .countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+}
+
+.work .country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    min-width: 140px;
+}
+
+.work .country img {
+    width: 128px; /* подберите нужный размер */
+    max-width: 100%;
+    height: auto;
+}
+
+.work .country p {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+
+/*Финал*/
+
+footer {
+    background: linear-gradient(180deg,rgb(29, 29, 29) 0%, rgb(26, 26, 26) 100%);
+    padding: 50px 0;
+}
+
+footer .blocks{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .logo{
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+}
+
+footer .youtube{
+    width: 60px;
+    padding: 10px;
+    height: auto;
+}
+
+footer .blocks p{
+    width: 100%;
+    max-width: 300px;
+    margin: 15px;
+}
+
+footer .blocks h6{
+    font-weight: 500;
+    font-size: 17px;
+}
+
+footer .blocks ul {
+    list-style: none;
+    color: aliceblue;
+}
+
+footer .blocks ul li{
+    margin-top: 7px;
+    color: aliceblue;
+}
+
+footer hr{
+    margin: 30px 0;
+    border: 0;
+    height: 0.6px;
+    background-color: rgb(133, 133, 133);
+}
+
+footer > p{
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    footer .logo{
+        width: 75%;
+        max-width: 310px;
+        height: auto;
+    }
+
+    footer .youtube{
+        width: 50px;
+        padding: 10px;
+        height: auto;
+    }
+}
+
+/*Новости*/
+
+.news {
+    padding-bottom: 150px;
+}
+
+.news .cube--news {
+    padding-top: 70px;
+}
+
+.cube--news h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cube--news p {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 170%;
+    margin: 30px;
+}
+
+.cube--news img {
+    float: right;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .cube--news img {
+        float: right;
+        width: 35%;
+        max-width: 300px;
+        height: auto;
+    }
+}
+
+/*Контакты*/
+
+.contacts {
+    padding: 50px;
+}
+
+.contacts .steps {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    gap: 1.5rem;
+    padding: 20px 20px;
+}
+
+.contacts .cont{
+    padding: 50px 20px;
+    font-size: 1rem;
+    line-height: 140%;
+}
